@@ -1,4 +1,5 @@
-Easy Installation of Oracle Instant Client on Ubuntu/Debian Linux
---------------------------------------------------------------------------
+##Easy Installation of Oracle Instant Client on Ubuntu/Debian Linux
 
-Provides a pain-free way to install the Oracle client libraries (along with SQL PLus) on your Ubuntu machine.
+If you've ever had to mess with installing and configuring the Oracle Instant Client on your Ubuntu/Debian machine,
+you know that it's a pain in the arse.
+
