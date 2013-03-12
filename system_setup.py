@@ -27,17 +27,17 @@ class SystemSetup(object):
 		self.install_alien()
 		subprocess.check_call(["sudo", "apt-get", "install", "libaio1"])
 
-		subprocess.check_call(
-			['sudo',
-			'alien',
-			'-iv',
-			'oracle_rpms/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm'])
+		# subprocess.check_call(
+		# 	['sudo',
+		# 	'alien',
+		# 	'-iv',
+		# 	'oracle_rpms/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm'])
 
-		subprocess.check_call(
-			['sudo',
-			'alien',
-			'-iv',
-			'oracle_rpms/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm'])
+		# subprocess.check_call(
+		# 	['sudo',
+		# 	'alien',
+		# 	'-iv',
+		# 	'oracle_rpms/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm'])
 
 		oracle_configuration_file = open('/etc/ld.so.conf.d/oracle.conf', 'w')
 		oracle_configuration_file.write('/usr/lib/oracle/11.2/client64/lib\n')
@@ -52,7 +52,7 @@ class SystemSetup(object):
 			'export TNS_ADMIN=/usr/lib/oracle/11.2/client64/network/admin\n')
 		system_environment_vars.close()
 
-		os.mkdir('/usr/lib/oracle/11.2/client64/network/admin')
+		os.makedirs('/usr/lib/oracle/11.2/client64/network/admin')
 
 		home_directory = os.environ['HOME']
 		bash_profile = open(home_directory + '.bashrc', 'a')
