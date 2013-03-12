@@ -16,31 +16,41 @@ class SystemSetup(object):
 		self.install_curl()
 		self.install_alien()
 
-		subprocess.check_call(
-			['sudo',
-			'curl',
-			'-vL',
-			'-o',
-			'/opt/oracle_libraries_primary_package.rpm',
-			'https://notredame.box.com/shared/static/p1gdmp4b1t0lcg2cm42g.rpm'])
+		# subprocess.check_call(
+		# 	['sudo',
+		# 	'curl',
+		# 	'-vL',
+		# 	'-o',
+		# 	'/opt/oracle_libraries_primary_package.rpm',
+		# 	'https://notredame.box.com/shared/static/p1gdmp4b1t0lcg2cm42g.rpm'])
+
+		# subprocess.check_call(
+		# 	['sudo',
+		# 	'curl',
+		# 	'-vL',
+		# 	'-o',
+		# 	'/opt/oracle_libraries_supplemental_sqlplus.rpm',
+		# 	'https://notredame.box.com/shared/static/1qjgd9kx7pcfq4t2lptw.rpm'])
+
+		# subprocess.check_call(
+		# 	['sudo',
+		# 	'curl',
+		# 	'-vL',
+		# 	'-o',
+		# 	'/opt/oracle_libraries_supplemental_sdk.rpm',
+		# 	'https://notredame.box.com/shared/static/kgyw7tcmqi8yk1mlfij9.rpm'])
 
 		subprocess.check_call(
 			['sudo',
-			'curl',
-			'-vL',
-			'-o',
-			'/opt/oracle_libraries_supplemental_sqlplus.rpm',
-			'https://notredame.box.com/shared/static/1qjgd9kx7pcfq4t2lptw.rpm'])
+			'alien',
+			'-iv',
+			'oracle_rpms/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm'])
 
 		subprocess.check_call(
 			['sudo',
-			'curl',
-			'-vL',
-			'-o',
-			'/opt/oracle_libraries_supplemental_sdk.rpm',
-			'https://notredame.box.com/shared/static/kgyw7tcmqi8yk1mlfij9.rpm'])
-
-		# Remove files after installation.
+			'alien',
+			'-iv',
+			'oracle_rpms/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm'])
 
 	def python_setup(self):
 		pass
