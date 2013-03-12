@@ -15,9 +15,25 @@ class SystemSetup(object):
 			)
 
 		self.file_insert_header = (
-			'###############################################\n',
-			'# Added by Oracle Instant Client Easy-Install\n',
-			'# On Github @ bit.ly/XoqtcH\n')
+			'\n################################################\n',
+			'# Added by Oracle Instant Client Easy-Install  #\n',
+			'# On Github @ bit.ly/XoqtcH                    #\n',
+			'################################################\n')
+
+		self.program_completion_message = (
+			'\n###############################################################\n'
+			'Congratulations, the program completed successfully.\n'
+			'Oracle Instant Client should now be correctly installed.\n\n'
+			'There are a couple of things that you still need to do.\n'
+			'1. Obtain sqlnet.ora, tnsnames.ora, and possibly ldap.ora \n'
+			'   from your DBA.\n'
+			'2. Place these files into the following directory: \n'
+			'	/usr/lib/oracle/11.2/client64/network/admin\n'
+			'3. Restart your terminal to load the new environment variables.\n'
+			'4. Attempt to connect to your database with sqlplus64.\n'
+			'5. Star this repo on Github so that I know if it is being used.\n'
+			'6. Submit any issues on the Github(http://bit.ly/XoqtcH).\n'
+			'###############################################################\n')
 
 		raw_input()
 
@@ -72,4 +88,4 @@ class SystemSetup(object):
 if __name__ == '__main__':
 	setup = SystemSetup()
 	setup.oracle_setup()
-	setup.install_git()
+	print setup.program_completion_message
