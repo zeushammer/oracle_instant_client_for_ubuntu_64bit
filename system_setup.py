@@ -9,7 +9,9 @@ class SystemSetup(object):
 			'###############################################################\n'
 			'This program will install and configure the Oracle Instant\n'
 			'Client on your system.\n\n'
-			'You must run this program as root for it to work correctly.\n\n'
+			'You must run this program as root for it to work correctly.\n'
+			'You will be prompted for permission to install software.\n'
+			'Say yes if you want the program to work. :)\n\n'
 			'Press enter to continue.\n'
 			'###############################################################\n'
 			)
