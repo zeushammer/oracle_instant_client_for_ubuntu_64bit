@@ -28,7 +28,7 @@ class SystemSetup(object):
 			'1. Obtain sqlnet.ora, tnsnames.ora, and possibly ldap.ora \n'
 			'   from your DBA.\n'
 			'2. Place these files into the following directory: \n'
-			'	/usr/lib/oracle/11.2/client64/network/admin\n'
+			'   /usr/lib/oracle/11.2/client64/network/admin\n'
 			'3. Restart your terminal to load the new environment variables.\n'
 			'4. Attempt to connect to your database with sqlplus64.\n'
 			'5. Star this repo on Github so that I know if it is being used.\n'
@@ -38,22 +38,20 @@ class SystemSetup(object):
 		raw_input()
 
 	def install_alien(self):
-		subprocess.check_call(["sudo", "apt-get", "install", "alien"])
+		subprocess.check_call(["apt-get", "install", "alien"])
 
 	def oracle_setup(self):
 		# todo: Remove sudo from all calls. Require the user to invoke as root.
 		self.install_alien()
-		subprocess.check_call(["sudo", "apt-get", "install", "libaio1"])
+		subprocess.check_call(["apt-get", "install", "libaio1"])
 
 		subprocess.check_call(
-			['sudo',
-			'alien',
+			['alien',
 			'-iv',
 			'oracle_rpms/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm'])
 
 		subprocess.check_call(
-			['sudo',
-			'alien',
+			['alien',
 			'-iv',
 			'oracle_rpms/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm'])
 
