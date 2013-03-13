@@ -32,7 +32,7 @@ class SystemSetup(object):
 			'3. Restart your terminal to load the new environment variables.\n'
 			'4. Attempt to connect to your database with sqlplus64.\n'
 			'5. Star this repo on Github so that I know if it is being used.\n'
-			'6. Submit any issues on the Github(http://bit.ly/XoqtcH).\n'
+			'6. Submit any issues on Github(http://bit.ly/XoqtcH).\n'
 			'###############################################################\n')
 
 		raw_input()
