@@ -40,12 +40,12 @@ class SystemSetup(object):
 		raw_input()
 
 	def install_alien(self):
-		subprocess.check_call(["apt-get", "install", "alien"])
+		subprocess.check_call(["apt-get", "-y", "install", "alien"])
 
 	def oracle_setup(self):
 		# todo: Remove sudo from all calls. Require the user to invoke as root.
 		self.install_alien()
-		subprocess.check_call(["apt-get", "install", "libaio1"])
+		subprocess.check_call(["apt-get", "-y", "install", "libaio1"])
 
 		subprocess.check_call(
 			['alien',
