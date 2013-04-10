@@ -47,15 +47,15 @@ class SystemSetup(object):
 		self.install_alien()
 		subprocess.check_call(["apt-get", "-y", "install", "libaio1"])
 
-		subprocess.check_call(
-			['alien',
-			'-iv',
-			'oracle_rpms/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm'])
+		#subprocess.check_call(
+		#	['alien',
+		#	'-iv',
+		#	'oracle_rpms/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm'])
 
-		subprocess.check_call(
-			['alien',
-			'-iv',
-			'oracle_rpms/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm'])
+		#subprocess.check_call(
+		#	['alien',
+		#	'-iv',
+		#	'oracle_rpms/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm'])
 
 		subprocess.check_call(
 			['alien',
