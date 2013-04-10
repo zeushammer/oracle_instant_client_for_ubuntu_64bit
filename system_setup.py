@@ -57,6 +57,11 @@ class SystemSetup(object):
 			'-iv',
 			'oracle_rpms/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm'])
 
+		subprocess.check_call(
+			['alien',
+			'-iv',
+			'oracle_rpms/oracle-instantclient11.2-devel-11.2.0.3.0-1.x86_64.rpm'])
+
 		oracle_configuration_file = open('/etc/ld.so.conf.d/oracle.conf', 'w')
 		oracle_configuration_file.writelines(self.file_insert_header)
 		oracle_configuration_file.write('/usr/lib/oracle/11.2/client64/lib\n')
