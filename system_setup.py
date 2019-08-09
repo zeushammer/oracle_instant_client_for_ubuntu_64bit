@@ -72,20 +72,13 @@ class SystemSetup(object):
 			'export ORACLE_HOME=/usr/lib/oracle/11.2/client64\n')
 		system_environment_vars.write(
 			'export TNS_ADMIN=/usr/lib/oracle/11.2/client64/network/admin\n')
+		system_environment_vars.write(
+			'export LD_LIBRARY_PATH=/usr/lib/oracle/11.2/client64/lib\n')
+		system_environment_vars.write(
+			'export PATH=$ORACLE_HOME:$PATH\n')		
 		system_environment_vars.close()
 
 		os.makedirs('/usr/lib/oracle/11.2/client64/network/admin')
-
-		home_directory = os.environ['HOME']
-		bash_profile = open(home_directory + '/.bashrc', 'a')
-		bash_profile.writelines(self.file_insert_header)
-		bash_profile.write(
-			'export LD_LIBRARY_PATH=/usr/lib/oracle/11.2/client64/lib\n')
-		bash_profile.write(
-			'export ORACLE_HOME=/usr/lib/oracle/11.2/client64\n')
-		bash_profile.write(
-			'export TNS_ADMIN=/usr/lib/oracle/11.2/client64/network/admin\n')
-		bash_profile.close()
 
 if __name__ == '__main__':
 	setup = SystemSetup()
