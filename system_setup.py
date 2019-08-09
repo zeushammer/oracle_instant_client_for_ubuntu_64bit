@@ -37,13 +37,10 @@ class SystemSetup(object):
 			'6. Submit any issues on Github(http://bit.ly/XoqtcH).\n'
 			'###############################################################\n')
 
-		raw_input()
-
 	def install_alien(self):
 		subprocess.check_call(["apt-get", "-y", "install", "alien"])
 
 	def oracle_setup(self):
-		# todo: Remove sudo from all calls. Require the user to invoke as root.
 		self.install_alien()
 		subprocess.check_call(["apt-get", "-y", "install", "libaio1"])
 
@@ -67,7 +64,7 @@ class SystemSetup(object):
 		oracle_configuration_file.write('/usr/lib/oracle/11.2/client64/lib\n')
 		oracle_configuration_file.close()
 
-		subprocess.check_call(["sudo", "ldconfig"])
+		subprocess.check_call(["ldconfig"])
 
 		system_environment_vars = open('/etc/profile.d/oracle.sh', 'w')
 		system_environment_vars.writelines(self.file_insert_header)
