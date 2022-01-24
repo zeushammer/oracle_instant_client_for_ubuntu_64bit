@@ -83,4 +83,4 @@ class SystemSetup(object):
 if __name__ == '__main__':
 	setup = SystemSetup()
 	setup.oracle_setup()
-	print setup.program_completion_message
+	print(setup.program_completion_message)
